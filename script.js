@@ -1,5 +1,9 @@
 // Write your JavaScript code here!
 
+//const { addDestinationInfo } = require("./scriptHelper");
+
+//const { pickPlanet } = require("./scriptHelper");
+
 
 
 window.addEventListener("load", function() {
@@ -27,12 +31,13 @@ window.addEventListener("load", function() {
        listedPlanets = result;
        console.log(listedPlanets);
    }).then(function () {
-       console.log(listedPlanets);
-       //myFetch gets the list of planets
+       console.log(listedPlanets);   
        //pickPlanet randomizes to get one planet
        //add destination displas on webpage
        
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+       pickPlanet(listedPlanets);
+       console.log(pickPlanet(listedPlanets))
    })
    
 });
