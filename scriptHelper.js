@@ -3,23 +3,24 @@ const { getByPlaceholderText } = require('@testing-library/dom');
 // Write your helper functions here!
 require('isomorphic-fetch');
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+function addDestinationInfo(document, pickedPlanet) {
    // Here is the HTML formatting for our mission target div.
-   missionTarget = document.getElementById("missionTarget")
-   
+   missionTarget = document.getElementById("missionTarget");
+    
    // using template literals to list below
-   //also using innerHTML
-   /*
-                <h2>Mission Destination</h2>
-                <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
-                    <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
-                </ol>
-                <img src="">
-   */
+   //needs to be commented in...
+   missionTarget.innerHTML = `
+   
+         <h2>Mission Destination</h2>
+                 <ol>
+                     <li>Name: ${pickedPlanet.name}</li>
+                     <li>Diameter: ${pickedPlanet.diameter}</li>
+                     <li>Star: ${pickedPlanet.star}</li>
+                     <li>Distance from Earth: ${pickedPlanet.distance}</li>
+                     <li>Number of Moons: ${pickedPlanet.moons}</li>
+                 </ol>
+                 <img src="${pickedPlanet.image}">
+   `
 }
 
 function validateInput(testInput) {
@@ -81,7 +82,7 @@ async function myFetch() {
 
 function pickPlanet(planets) {
      let randomPlanet = Math.floor(Math.random()*7);
-     return randomPlanet;
+     return planets[randomPlanet];
     
 }
 

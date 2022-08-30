@@ -36,8 +36,9 @@ window.addEventListener("load", function() {
        //add destination displas on webpage
        
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-       pickPlanet(listedPlanets);
-       console.log(pickPlanet(listedPlanets))
+       let pickedPlanet = pickPlanet(listedPlanets);
+       console.log(pickedPlanet)
+       addDestinationInfo(document, pickedPlanet);
    })
    
 });
