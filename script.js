@@ -32,9 +32,6 @@ window.addEventListener("load", function() {
        console.log(listedPlanets);
    }).then(function () {
        console.log(listedPlanets);   
-       //pickPlanet randomizes to get one planet
-       //add destination displas on webpage
-       
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
        let pickedPlanet = pickPlanet(listedPlanets);
        console.log(pickedPlanet)

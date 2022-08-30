@@ -4,11 +4,7 @@ const { getByPlaceholderText } = require('@testing-library/dom');
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, pickedPlanet) {
-   // Here is the HTML formatting for our mission target div.
    missionTarget = document.getElementById("missionTarget");
-    
-   // using template literals to list below
-   //needs to be commented in...
    missionTarget.innerHTML = `
    
          <h2>Mission Destination</h2>
